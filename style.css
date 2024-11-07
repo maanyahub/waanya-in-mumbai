@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #FF7E5F, #00204A);
+    color: #fff;
+    overflow-x: hidden;
+}
+header {
+    text-align: center;
+    padding: 2em 0;
+}
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    animation: typewriter 4s steps(40) 1 normal both;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+}
+.subtitle {
+    margin-top: 0.5em;
+    font-size: 1.2em;
+    color: #ffd5c2;
+}
+.poem {
+    margin: 2em auto;
+    padding: 1em;
+    max-width: 600px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.8;
+}
+.countdown {
+    text-align: center;
+    margin: 2em 0;
+}
+.carousel {
+    text-align: center;
+    margin: 3em 0;
+}
+.carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #001c33;
+}
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
