@@ -3,194 +3,320 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maanya’s Mumbai Adventure</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <title>Maanya's Magical Mumbai Journey 🌴🥥</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* Base styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom right, #f6d365, #fda085);
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffd1ff, #fae8ff, #ffe8f3, #fff0f3);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #4a4a4a;
       overflow-x: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       min-height: 100vh;
     }
-    h1, h2, h3, p {
-      margin: 0;
-      padding: 0;
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50% }
+      50% { background-position: 100% 50% }
+      100% { background-position: 0% 50% }
     }
 
-    /* Container styling */
     #container {
-      max-width: 800px;
-      width: 90%;
-      margin: 20px;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      text-align: center;
+      max-width: 900px;
+      width: 95%;
+      margin: 40px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      box-shadow: 
+        0 10px 30px rgba(255, 182, 193, 0.3),
+        0 0 60px rgba(255, 182, 193, 0.2);
+      backdrop-filter: blur(10px);
     }
 
-    /* Title and subtitle styling */
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.5em;
-      color: #ff4e50;
-      text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
-      animation: pulse 3s infinite ease-in-out;
+      font-size: 4.5em;
+      background: linear-gradient(45deg, #ff6b8b, #ff62a5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      animation: floatTitle 3s ease-in-out infinite;
     }
+
+    @keyframes floatTitle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
     h2 {
-      font-size: 1.2em;
-      color: #666;
-      margin-top: 5px;
-    }
-
-    /* Poem box styling */
-    .poem-box {
-      background: #fff5e1;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      font-size: 1.1em;
-      line-height: 1.5;
-      color: #5e503f;
-      transition: transform 0.3s ease-in-out;
-    }
-    .poem-box:hover {
-      transform: scale(1.02);
-    }
-
-    /* Countdown styling */
-    .countdown {
-      margin-top: 15px;
+      font-family: 'Playfair Display', serif;
       font-size: 1.4em;
-      font-weight: bold;
-      color: #ff6b6b;
-      animation: glow 1.5s infinite ease-in-out alternate;
+      color: #786090;
+      margin-bottom: 30px;
+      font-style: italic;
     }
 
-    /* Swiper container styling */
+    .poem-box {
+      background: linear-gradient(135deg, #fff8f8, #fff5fa);
+      padding: 35px;
+      margin: 30px 0;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(255, 182, 193, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poem-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
+      animation: shimmer 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .poem-box h3 {
+      font-family: 'Playfair Display', serif;
+      color: #ff62a5;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .poem-box p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #666;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    }
+
+    .countdown {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6em;
+      color: #ff62a5;
+      margin: 30px 0;
+      padding: 20px;
+      border: 2px solid rgba(255, 98, 165, 0.3);
+      border-radius: 15px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 98, 165, 0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(255, 98, 165, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 98, 165, 0); }
+    }
+
+    .countdown span {
+      display: block;
+      font-size: 1.2em;
+      color: #ff4081;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
     .swiper-container {
       width: 100%;
-      height: 350px;
-      margin-top: 30px;
-      border-radius: 20px;
+      height: 400px;
+      margin-top: 40px;
+      border-radius: 25px;
       overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-      transition: box-shadow 0.3s ease-in-out;
-    }
-    .swiper-container:hover {
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
 
-    /* Slide and caption styling */
     .swiper-slide {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2em;
-      color: #fff;
-      position: relative;
+      border-radius: 25px;
+      overflow: hidden;
     }
+
     .slide-caption {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      padding: 15px;
-      font-size: 1.2em;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      padding: 20px;
       font-family: 'Great Vibes', cursive;
-      font-weight: bold;
+      font-size: 2em;
     }
 
-    /* Swiper navigation and pagination */
-    .swiper-button-next, .swiper-button-prev {
-      color: #ff6b6b;
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #fff;
+      background: rgba(255, 98, 165, 0.7);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
     }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background: rgba(255, 98, 165, 0.9);
+      transform: scale(1.1);
+    }
+
     .swiper-pagination-bullet {
-      background: #ff6b6b;
+      background: #ff62a5;
+      opacity: 0.7;
     }
 
-    /* Animations */
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
+    .swiper-pagination-bullet-active {
+      background: #ff4081;
+      opacity: 1;
     }
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #ff6b6b; }
-      to { text-shadow: 0 0 20px #ff6b6b; }
+
+    /* Add floating hearts */
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 98, 165, 0.3);
+      transform: rotate(45deg);
+      animation: floatHeart 15s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255, 98, 165, 0.3);
+    }
+
+    .heart::before {
+      left: -10px;
+    }
+
+    .heart::after {
+      top: -10px;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: rotate(45deg) translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: rotate(45deg) translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
     }
   </style>
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css" />
 </head>
 <body>
+  <!-- Floating hearts background -->
+  <div class="hearts">
+    <script>
+      for(let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDelay = Math.random() * 15 + 's';
+        document.querySelector('.hearts').appendChild(heart);
+      }
+    </script>
+  </div>
 
   <div id="container">
-    <h1>Maanya’s Mumbai Adventure</h1>
-    <h2>From Chennai’s warmth to Coimbatore’s care, now discovering the magic of Mumbai.</h2>
+    <h1>Maanya's Magical Mumbai Journey</h1>
+    <h2>From Chennai's warmth to Coimbatore's embrace, now dancing with Mumbai's endless grace ✨</h2>
 
     <div class="poem-box">
-      <h3 style="color: #ff6961;">A Poem for Maanya</h3>
-      <p>From Chennai's embrace to Coimbatore's shores,<br>
-        Now in Mumbai, where her spirit soars.<br>
-        The skyline glimmers as dreams align,<br>
-        A city's pulse in her steps divine.</p>
-      <p>At Elephanta, mysteries old and wise,<br>
-        She captures stories through eager eyes.<br>
-        With every praise, her light shines bright,<br>
-        Professors marvel at her insight.</p>
-      <p>Though days are few till she returns,<br>
-        In her joy, my heart still yearns.<br>
-        For each mile traveled, each memory made,<br>
-        Maanya, my love, your journey’s displayed.</p>
+      <h3>A Symphony for Maanya</h3>
+      <p>Like morning stars that dance and shine,<br>
+         From Chennai's shore to Mumbai's skyline.<br>
+         Your spirit bright, your heart so free,<br>
+         A journey blessed by destiny.</p>
+      
+      <p>At Elephanta's ancient gate,<br>
+         Where wisdom whispers stories of fate.<br>
+         Your curious mind, your gentle grace,<br>
+         Brings light to every sacred space.</p>
+      
+      <p>Through bustling streets and quiet shrines,<br>
+         Your laughter with the city chimes.<br>
+         Each moment precious, pure and true,<br>
+         Mumbai's magic, found in you.</p>
+
+      <p>Though miles may stretch between us now,<br>
+         Like stars that guide a sailor's bow,<br>
+         Your journey fills my heart with pride,<br>
+         Until you're back here by my side. 💫</p>
     </div>
 
     <div class="countdown">
-      Counting down till your return...<br>
-      <span style="color: #ff6961;">3 Days Left</span>
+      Counting moments until you return...<br>
+      <span>✨ 3 Magical Days ✨</span>
     </div>
 
-    <!-- Swiper -->
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="mumbai_skyline.jpg" alt="Mumbai Skyline" style="width: 100%; height: 100%; object-fit: cover;">
-          <div class="slide-caption">Mumbai Skyline 🌇</div>
+          <div class="slide-caption">Mumbai's Sparkling Skyline 🌇</div>
         </div>
         <div class="swiper-slide">
           <img src="waanya.jpg" alt="Pretty Pookie Waanya" style="width: 100%; height: 100%; object-fit: cover;">
-          <div class="slide-caption">Pretty Pookie Waanya 💗🎀</div>
+          <div class="slide-caption">Our Beautiful Waanya 💖</div>
         </div>
         <div class="swiper-slide">
           <img src="amrita_ashram.jpg" alt="Amrita Ashram" style="width: 100%; height: 100%; object-fit: cover;">
-          <div class="slide-caption">Amrita Ashram ✨</div>
+          <div class="slide-caption">Peaceful Amrita Ashram ✨</div>
         </div>
       </div>
-      <!-- Add Pagination and Navigation buttons -->
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
     </div>
   </div>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
   <script>
     const swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
       loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -199,18 +325,10 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
     });
   </script>
-
 </body>
 </html>
+
 
 
