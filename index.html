@@ -3,78 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maanya in Mumbai</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css">
+    <title>Maanya’s Mumbai Journey</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #f2e9e4, #c9ada7);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #e8a87c;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        p.subtext {
+            font-size: 1.2em;
+            color: #fffcf9;
+        }
+
+        /* Poem Section */
+        .poem-container {
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .poem-container h2 {
+            font-size: 2em;
+            color: #e85a4f;
+            margin-bottom: 15px;
+        }
+
+        .poem {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Countdown Section */
+        .countdown-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .countdown {
+            font-size: 1.8em;
+            color: #e85a4f;
+            font-weight: bold;
+        }
+
+        /* Swiper Carousel Styling */
+        .swiper-container {
+            width: 90%;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .swiper-slide {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Caption Styling */
+        .caption {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1em;
+            text-align: center;
+            width: 80%;
+        }
+
+        /* Additional Styling for Aesthetic Touch */
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1 class="title">Maanya in Mumbai</h1>
-        <p class="subtitle">Dreaming, exploring, and enjoying every moment.</p>
-    </header>
+
+    <!-- Header Section -->
+    <div class="header fade-in">
+        <h1>Maanya’s Mumbai Adventure</h1>
+        <p class="subtext">From Chennai’s warmth to Coimbatore’s care, and now, the vibrant heart of Mumbai.</p>
+    </div>
 
     <!-- Poem Section -->
-    <section class="poem">
-        <h2>Poem for Maanya</h2>
-        <p>From Chennai’s warmth, to Coimbatore’s care,</p>
-        <p>Now in Mumbai, skies bold and rare...</p>
-        <p>Echoes of Elephanta, laughter in the air,</p>
-        <p>Your spirit shines, beyond compare.</p>
-    </section>
+    <div class="poem-container fade-in">
+        <h2>A Poem for Maanya</h2>
+        <p class="poem">
+            From Chennai's embrace to Coimbatore's shores,<br>
+            Now in Mumbai, where her spirit soars.<br>
+            The skyline glimmers as dreams align,<br>
+            A city's pulse in her steps divine.<br><br>
+
+            At Elephanta, mysteries old and wise,<br>
+            She captures stories through eager eyes.<br>
+            With every praise, her light shines bright,<br>
+            Professors marvel at her insight.<br><br>
+
+            Though days are few till she returns,<br>
+            In her joy, my heart still yearns.<br>
+            For each mile traveled, each memory made,<br>
+            Maanya, my love, your journey’s displayed.
+        </p>
+    </div>
 
     <!-- Countdown Section -->
-    <section class="countdown">
-        <h2>Countdown Until You're Back</h2>
-        <div id="timer">3 Days Left</div>
-    </section>
+    <div class="countdown-container fade-in">
+        <p>Counting down till your return...</p>
+        <p class="countdown">3 Days Left</p>
+    </div>
 
-    <!-- Photo Carousel Section -->
-    <section class="carousel">
-        <h2>Maanya's Mumbai Moments</h2>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                    <img src="mumbai_skyline.jpg" alt="Mumbai Skyline">
-                    <p>Mumbai skyline during sunset</p>
-                </div>
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <img src="waanya.jpg" alt="Waanya">
-                    <p>Pretty Pretty Waanya🎀💗</p>
-                </div>
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <img src="amrita_ashram.jpg" alt="Amrita Ashram">
-                    <p>Peaceful moments at Amrita Ashram</p>
-                </div>
-                <!-- Add more slides as needed -->
+    <!-- Swiper Section with Captions -->
+    <div class="swiper-container fade-in">
+        <div class="swiper-wrapper">
+            <!-- First Slide -->
+            <div class="swiper-slide">
+                <img src="mumbai_skyline.jpg" alt="Mumbai Skyline">
+                <div class="caption">The lights of Mumbai sparkle, just like you, Maanya.</div>
             </div>
-            <!-- Add Navigation Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <!-- Second Slide -->
+            <div class="swiper-slide">
+                <img src="waanya.jpg" alt="Maanya enjoying Mumbai">
+                <div class="caption">Pretty Pookie Waanya💗🎀</div>
+            </div>
+            <!-- Third Slide -->
+            <div class="swiper-slide">
+                <img src="amrita_ashram.jpg" alt="Amrita Ashram">
+                <div class="caption">Finding peace at Amrita Ashram, a quiet moment in the city’s heart.</div>
+            </div>
         </div>
-    </section>
+        <!-- Swiper Pagination and Navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
 
-    <footer>
-        <p>Made with love by Shreyansh for Maanya</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
     <script>
-        // Initialize Swiper for Carousel
         const swiper = new Swiper('.swiper-container', {
             loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
             autoplay: {
                 delay: 3000,
+                disableOnInteraction: false,
             },
-            effect: 'fade',
         });
     </script>
 </body>
