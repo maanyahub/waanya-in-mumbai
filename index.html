@@ -1,200 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maanya’s Mumbai Journey</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
-    <style>
-        /* General Body Styling */
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(to bottom, #f2e9e4, #c9ada7);
-            color: #333;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maanya’s Mumbai Adventure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #f6d365, #fda085);
+      color: #333;
+      overflow-x: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1, h2, h3, p {
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Header Section */
-        .header {
-            text-align: center;
-            padding: 20px;
-            background-color: #e8a87c;
-            color: #ffffff;
-        }
+    /* Container styling */
+    #container {
+      max-width: 800px;
+      width: 90%;
+      margin: 20px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      text-align: center;
+    }
 
-        h1 {
-            font-size: 3em;
-            margin: 0;
-            letter-spacing: 1px;
-        }
+    /* Title and subtitle styling */
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      color: #ff4e50;
+      text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+      animation: pulse 3s infinite ease-in-out;
+    }
+    h2 {
+      font-size: 1.2em;
+      color: #666;
+      margin-top: 5px;
+    }
 
-        p.subtext {
-            font-size: 1.2em;
-            color: #fffcf9;
-        }
+    /* Poem box styling */
+    .poem-box {
+      background: #fff5e1;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      font-size: 1.1em;
+      line-height: 1.5;
+      color: #5e503f;
+      transition: transform 0.3s ease-in-out;
+    }
+    .poem-box:hover {
+      transform: scale(1.02);
+    }
 
-        /* Poem Section */
-        .poem-container {
-            margin: 40px auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+    /* Countdown styling */
+    .countdown {
+      margin-top: 15px;
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #ff6b6b;
+      animation: glow 1.5s infinite ease-in-out alternate;
+    }
 
-        .poem-container h2 {
-            font-size: 2em;
-            color: #e85a4f;
-            margin-bottom: 15px;
-        }
+    /* Swiper container styling */
+    .swiper-container {
+      width: 100%;
+      height: 350px;
+      margin-top: 30px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+    .swiper-container:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
 
-        .poem {
-            font-size: 1.3em;
-            line-height: 1.8;
-            color: #555;
-        }
+    /* Slide and caption styling */
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: #fff;
+      position: relative;
+    }
+    .slide-caption {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 15px;
+      font-size: 1.2em;
+      font-family: 'Great Vibes', cursive;
+      font-weight: bold;
+    }
 
-        /* Countdown Section */
-        .countdown-container {
-            text-align: center;
-            margin: 20px;
-        }
+    /* Swiper navigation and pagination */
+    .swiper-button-next, .swiper-button-prev {
+      color: #ff6b6b;
+    }
+    .swiper-pagination-bullet {
+      background: #ff6b6b;
+    }
 
-        .countdown {
-            font-size: 1.8em;
-            color: #e85a4f;
-            font-weight: bold;
-        }
-
-        /* Swiper Carousel Styling */
-        .swiper-container {
-            width: 90%;
-            max-width: 700px;
-            margin: 20px auto;
-        }
-
-        .swiper-slide {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .swiper-slide img {
-            width: 100%;
-            border-radius: 10px;
-            object-fit: cover;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Caption Styling */
-        .caption {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 1em;
-            text-align: center;
-            width: 80%;
-        }
-
-        /* Additional Styling for Aesthetic Touch */
-        .fade-in {
-            animation: fadeIn 2s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+    /* Animations */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #ff6b6b; }
+      to { text-shadow: 0 0 20px #ff6b6b; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 </head>
 <body>
 
-    <!-- Header Section -->
-    <div class="header fade-in">
-        <h1>Maanya’s Mumbai Adventure</h1>
-        <p class="subtext">From Chennai’s warmth to Coimbatore’s care, and now, the vibrant heart of Mumbai.</p>
+  <div id="container">
+    <h1>Maanya’s Mumbai Adventure</h1>
+    <h2>From Chennai’s warmth to Coimbatore’s care, now discovering the magic of Mumbai.</h2>
+
+    <div class="poem-box">
+      <h3 style="color: #ff6961;">A Poem for Maanya</h3>
+      <p>From Chennai's embrace to Coimbatore's shores,<br>
+        Now in Mumbai, where her spirit soars.<br>
+        The skyline glimmers as dreams align,<br>
+        A city's pulse in her steps divine.</p>
+      <p>At Elephanta, mysteries old and wise,<br>
+        She captures stories through eager eyes.<br>
+        With every praise, her light shines bright,<br>
+        Professors marvel at her insight.</p>
+      <p>Though days are few till she returns,<br>
+        In her joy, my heart still yearns.<br>
+        For each mile traveled, each memory made,<br>
+        Maanya, my love, your journey’s displayed.</p>
     </div>
 
-    <!-- Poem Section -->
-    <div class="poem-container fade-in">
-        <h2>A Poem for Maanya</h2>
-        <p class="poem">
-            From Chennai's embrace to Coimbatore's shores,<br>
-            Now in Mumbai, where her spirit soars.<br>
-            The skyline glimmers as dreams align,<br>
-            A city's pulse in her steps divine.<br><br>
-
-            At Elephanta, mysteries old and wise,<br>
-            She captures stories through eager eyes.<br>
-            With every praise, her light shines bright,<br>
-            Professors marvel at her insight.<br><br>
-
-            Though days are few till she returns,<br>
-            In her joy, my heart still yearns.<br>
-            For each mile traveled, each memory made,<br>
-            Maanya, my love, your journey’s displayed.
-        </p>
+    <div class="countdown">
+      Counting down till your return...<br>
+      <span style="color: #ff6961;">3 Days Left</span>
     </div>
 
-    <!-- Countdown Section -->
-    <div class="countdown-container fade-in">
-        <p>Counting down till your return...</p>
-        <p class="countdown">3 Days Left</p>
-    </div>
-
-    <!-- Swiper Section with Captions -->
-    <div class="swiper-container fade-in">
-        <div class="swiper-wrapper">
-            <!-- First Slide -->
-            <div class="swiper-slide">
-                <img src="mumbai_skyline.jpg" alt="Mumbai Skyline">
-                <div class="caption">The lights of Mumbai sparkle, just like you, Maanya.</div>
-            </div>
-            <!-- Second Slide -->
-            <div class="swiper-slide">
-                <img src="waanya.jpg" alt="Maanya enjoying Mumbai">
-                <div class="caption">Pretty Pookie Waanya💗🎀</div>
-            </div>
-            <!-- Third Slide -->
-            <div class="swiper-slide">
-                <img src="amrita_ashram.jpg" alt="Amrita Ashram">
-                <div class="caption">Finding peace at Amrita Ashram, a quiet moment in the city’s heart.</div>
-            </div>
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="mumbai_skyline.jpg" alt="Mumbai Skyline" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="slide-caption">Mumbai Skyline 🌇</div>
         </div>
-        <!-- Swiper Pagination and Navigation -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-slide">
+          <img src="waanya.jpg" alt="Pretty Pookie Waanya" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="slide-caption">Pretty Pookie Waanya 💗🎀</div>
+        </div>
+        <div class="swiper-slide">
+          <img src="amrita_ashram.jpg" alt="Amrita Ashram" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="slide-caption">Amrita Ashram ✨</div>
+        </div>
+      </div>
+      <!-- Add Pagination and Navigation buttons -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
+  </div>
 
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-        });
-    </script>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+    });
+  </script>
+
 </body>
 </html>
+
+
