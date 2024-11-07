@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maanya in Mumbai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <header>
+        <h1 class="title">Maanya in Mumbai</h1>
+        <p class="subtitle">A journey painted with dreams and skylines.</p>
+    </header>
+
+    <!-- Poem Section -->
+    <section class="poem">
+        <h2>Poem for Maanya</h2>
+        <p>From Chennai's warmth, to Coimbatore's care,</p>
+        <p>To Mumbai's skies, bold and rare...</p>
+        <p>The Elephanta echoes, of laughter and lore,</p>
+        <p>Your joy is the rhythm, your spirit the shore.</p>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown">
+        <h2>Counting Days Until You're Back</h2>
+        <div id="timer">3 Days Left</div>
+    </section>
+
+    <!-- Photo Carousel Section -->
+    <section class="carousel">
+        <h2>Maanya's Mumbai Moments</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="mumbai_skyline.jpg" alt="Mumbai Skyline">
+                    <p>Mumbai skyline during sunset</p>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="waanya.jpg" alt="Elephanta Caves">
+                    <p>Pretty Waanya</p>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="amrita_ashram.jpg" alt="Amrita Ashram">
+                    <p>Peaceful moments at Amrita Ashram</p>
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <!-- Add Navigation Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Made with love by Shreyansh for Maanya</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper for Carousel
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000,
+            },
+            effect: 'fade',
+        });
+    </script>
+</body>
+</html>
