@@ -1,54 +1,109 @@
+/* General Styles */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #FF7E5F, #00204A);
+    background: linear-gradient(135deg, #ff8a5c, #333399);
     color: #fff;
     overflow-x: hidden;
 }
+
 header {
     text-align: center;
     padding: 2em 0;
 }
+
 .title {
     font-family: 'Playfair Display', serif;
-    font-size: 3em;
+    font-size: 2.8em;
     animation: typewriter 4s steps(40) 1 normal both;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid white;
+    border-right: 3px solid #ffd5c2;
 }
+
 .subtitle {
     margin-top: 0.5em;
     font-size: 1.2em;
     color: #ffd5c2;
+    line-height: 1.4;
 }
+
+/* Poem Section */
 .poem {
-    margin: 2em auto;
-    padding: 1em;
-    max-width: 600px;
+    margin: 1.5em auto;
+    padding: 1.5em;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
     text-align: center;
     font-family: 'Playfair Display', serif;
     line-height: 1.8;
+    color: #ffebcd;
 }
+
+/* Countdown Section */
 .countdown {
     text-align: center;
     margin: 2em 0;
 }
+
+#timer {
+    font-size: 1.8em;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    color: #fff;
+}
+
+/* Carousel Section */
 .carousel {
     text-align: center;
-    margin: 3em 0;
+    margin: 2em 0;
 }
-.carousel img {
+
+.swiper-container {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-slide img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
 }
+
+.swiper-slide p {
+    font-size: 1em;
+    color: #ffd5c2;
+    margin-top: 0.5em;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 1em 0;
-    background: #001c33;
+    font-size: 0.9em;
+    color: #ffd5c2;
+    background: #302b63;
 }
+
 @keyframes typewriter {
     from { width: 0; }
     to { width: 100%; }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2em;
+    }
+    .subtitle {
+        font-size: 1em;
+    }
+    .poem, .countdown, .carousel {
+        padding: 1em;
+    }
 }
